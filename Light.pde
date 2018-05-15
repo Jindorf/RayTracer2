@@ -46,8 +46,4 @@ class Light{
   Color shadowColor(){
     return new Color(0,0,0);
   }
-  
-  Lightsample sample(Vector3D thatPosition){
-    return new Lightsample(this.position,thatPosition);
-  }
 }

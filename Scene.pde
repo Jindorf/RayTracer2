@@ -16,6 +16,7 @@ class Scene{
     sphereFactory=new SphereFactory(spheres);
     tracer = new Tracer(sphereFactory);
     init();
+    TestVector3D testv3d = new TestVector3D();
     background(0);
   }
   
@@ -33,7 +34,7 @@ class Scene{
       if(currentHit.isHit()){
         visibleHits.add(currentHit);
       }
-    }               //<>//
+    }               //<>// //<>//
   // for every real Hit, fire an shadowray to the light, color the pixel  
     for(int l=0;l<visibleHits.size();l++){
       PrimaryHit currentHit = visibleHits.get(l);
@@ -48,7 +49,7 @@ class Scene{
     colorOfPixel = new Color();
      if(light.lightVisibility(currentHit.position.copy(),tracer)){
        float dotProduct=normalVec.dotProduct(light.direction());
-       if(dotProduct>0.0){ //<>//
+       if(dotProduct>0.0){ //<>// //<>//
          colorOfPixel.add(light.getColor().mult(dotProduct));        
        }
        else
