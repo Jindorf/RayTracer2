@@ -17,7 +17,9 @@ class Tracer{
     for(int i=0;i<sphereFactory.getSize();i++){     
       PrimaryHit currentHit = sphereFactory.getSphere(i).getPrimaryHit(ray);
       if(currentHit.isHit()){
-      if(currentHit.position.sub(ray.origin).length() < minDistance)
+        float currentDistance = currentHit.position.sub(ray.origin).length();
+      if(currentDistance < minDistance)
+        minDistance = currentDistance;
         closestHit = currentHit;
       }
     }

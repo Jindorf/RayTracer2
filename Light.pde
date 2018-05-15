@@ -19,7 +19,7 @@ class Light{
   }
   
   boolean lightVisibility(Vector3D here, Tracer tracer){
-    Ray shadowRay = new Ray(here, this.direction());
+    Ray shadowRay = new Ray(here, this.direction);
     PrimaryHit shadowRayHit = tracer.trace(shadowRay);
     return !shadowRayHit.isHit();
   }

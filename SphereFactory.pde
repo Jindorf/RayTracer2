@@ -9,6 +9,11 @@ class SphereFactory{
     buildSpheres();
   }
   
+  SphereFactory(ArrayList<Sphere> sphereList){
+    this.sphereList = sphereList;
+  }
+  
+  
   void buildSpheres(){
     for(int i=0; i<amountOfSpheres; i++){
       Sphere s = new Sphere(); // puts random Spheres in sphereList

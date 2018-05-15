@@ -26,7 +26,7 @@ class Sphere{
   }
   
   Vector3D getNormal(Vector3D hitpoint){
-    return new Vector3D(hitpoint.sub(center).normalize());
+    return new Vector3D(hitpoint.sub(center)).normalize();
   }
   
   PrimaryHit getPrimaryHit(Ray ray){
