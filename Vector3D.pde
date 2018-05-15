@@ -16,6 +16,12 @@ class Vector3D{
     this.z = that.z;
   }
   
+  Vector3D(){
+    this.x = 0;
+    this.y = 0;
+    this.z = 0;
+  }
+  
   float dotProduct(Vector3D that){
     return this.x*that.x + this.y*that.y + this.z*that.z;
   }
@@ -50,5 +56,17 @@ class Vector3D{
   
   Vector3D copy(){
     return new Vector3D(this);
+  }
+  
+  void set(float x, float y, float z){
+    this.x = x;
+    this.y = y;
+    this.z = z;
+  }
+  
+  void set(Vector3D that){
+    this.x = that.x;
+    this.y = that.y;
+    this.z = that.z;
   }
 }

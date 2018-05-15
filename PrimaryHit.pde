@@ -16,6 +16,7 @@ class PrimaryHit{
   }
   
   boolean isHit(){
+    
     return isHit;
   }
   

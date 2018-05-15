@@ -28,4 +28,8 @@ class SphereFactory{
   Sphere getSphere(int i){
     return sphereList.get(i);
   }
+  
+  ArrayList <Sphere> getSpheres(){
+    return sphereList;
+  }
 }

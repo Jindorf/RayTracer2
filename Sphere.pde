@@ -33,7 +33,7 @@ class Sphere{
     t=calcT(ray);
     p=calcP(ray,t);
     //is p in Sphere?
-    if(pow(center.x-p.x,2)+pow(center.y-p.y,2)+pow(center.z-p.z,2) < radius*radius){
+    if(pow(center.x-p.x,2)+pow(center.y-p.y,2)+pow(center.z-p.z,2) < radius*radius){ // (c-p)^2 < r^2
       deltaT=calcDeltaT();
       Vector3D position = calcP(ray,t-deltaT);
       Vector3D direction = getNormal(position);
@@ -41,23 +41,5 @@ class Sphere{
     }
     else
       return new PrimaryHit();
-  }
-  
-  float calcT(Ray ray){
-    Vector3D direction= ray.direction.copy();
-    Vector3D origin = ray.origin.copy();
-    return direction.dotProduct(center.sub(origin)); // t = d*(c-o) 
-  }
-  
-  float calcDeltaT(){
-   //sqrt(r^2 -(p-c)^2)
-   return sqrt(radius*radius - (p.sub(center).dotProduct(p.sub(center))));
-  }
-  
-  //p(t)
-  Vector3D calcP(Ray ray, float t){
-    Vector3D direction= ray.direction.copy();
-    Vector3D origin = ray.origin.copy();
-    return origin.add(direction.mult(t)); // p = o+t*d
   }    
 }
