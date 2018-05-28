@@ -28,18 +28,4 @@ class Sphere{
   Vector3D getNormal(Vector3D hitpoint){
     return new Vector3D(hitpoint.sub(center)).normalize();
   }
-  
-  PrimaryHit getPrimaryHit(Ray ray){
-    t=calcT(ray);
-    p=calcP(ray,t);
-    //is p in Sphere?
-    if(pow(center.x-p.x,2)+pow(center.y-p.y,2)+pow(center.z-p.z,2) < radius*radius){ // (c-p)^2 < r^2
-      deltaT=calcDeltaT();
-      Vector3D position = calcP(ray,t-deltaT);
-      Vector3D direction = getNormal(position);
-      return new PrimaryHit(position,direction);
-    }
-    else
-      return new PrimaryHit();
-  }    
 }

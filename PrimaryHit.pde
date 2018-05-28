@@ -15,8 +15,7 @@ class PrimaryHit{
     this.isHit = false;
   }
   
-  boolean isHit(){
-    
+  boolean isHit(){  
     return isHit;
   }
   
